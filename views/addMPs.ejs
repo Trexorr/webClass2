@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <%- include('partials/header1.ejs') %>
+    </head>
+    <body class="addmps-page dark-theme">
+        <div class="dark-navbar-container">
+            <%- include('partials/navbar2.ejs') %>
+            <div class="dark-title-section">
+                <h1 class="dark-hero-title">ADD A</h1>
+                <h2 class="dark-hero-subtitle">NEW MEMBER OF PARLIAMENT</h2>
+            </div>
+        </div>
+        <div class="container hero">
+            <div class="dark-content-container addmps-form">
+                <h1 class="dark-form-title">New Member of Parliament</h1>
+                <form method="POST" class="dark-form-container">
+                    <div class="dark-form-group">
+                        <label for="id" class="dark-form-label">MP ID</label>
+                        <input type="text" id="id" placeholder="Enter MP ID" name="id" required class="dark-form-input">
+                    </div>
+                    <div class="dark-form-group">
+                        <label for="name" class="dark-form-label">MP Name</label>
+                        <input type="text" id="name" placeholder="Enter MP's name" name="name" required class="dark-form-input">
+                    </div>
+                    <div class="dark-form-group">
+                        <label for="party" class="dark-form-label">Political Party</label>
+                        <input type="text" id="party" placeholder="Enter party name" name="party" required class="dark-form-input">
+                    </div>
+                    <div class="dark-form-submit-section">
+                        <button type="submit" class="dark-form-submit-btn">
+                            Add MP to Parliament
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <%- include('partials/header1.ejs') %>
+    </head>
+    <body class="listmps-page dark-theme">
+        <div class="dark-navbar-container">
+            <%- include('partials/navbar2.ejs') %>
+            <div class="dark-title-section">
+                <h1 class="dark-hero-title">PARLIAMENT</h1>
+                <h2 class="dark-hero-subtitle">MEMBERS OF PARLIAMENT</h2>
+            </div>
+        </div>
+        <div class="container hero">
+            <div class="listmps-content-wrapper">
+                <div class="dark-content-container listmps-table-container">
+                    <table class="listmps-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Party</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if (MPsData.length !=0) {var i=1; MPsData.forEach( function(data) { %>
+                            <tr class="listmps-row">
+                                <td><%=data.id %></td>
+                                <td class="name-cell"><%=data.name %></td>
+                                <td class="party-cell"><%=data.party %></td>
+                            </tr>
+                            <% i++; }) %> <%}%>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="dark-content-container listmps-note-section">
+                    <p><strong>Note:</strong> Only authorized users can add new Members of Parliament to the system.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

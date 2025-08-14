@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <%- include('partials/header1.ejs') %>
+    </head>
+    <body class="login-page dark-theme">
+        <div class="login-transparent-nav">
+            <%- include('partials/navbar3.ejs') %>
+        </div>
+        <div class="container hero">
+            <div class="dark-content-container login-form">
+                <h1 class="dark-form-title">Login</h1>
+                <form action="/auth" method="post" class="dark-form-container">
+                    <div class="dark-form-group">
+                        <input type="text" name="username" placeholder="Username" id="username" required class="dark-form-input">
+                    </div>
+                    <div class="dark-form-group">
+                        <input type="password" name="password" placeholder="Password" id="password" required class="dark-form-input">
+                    </div>
+                    <div class="dark-form-submit-section">
+                        <input type="submit" value="Login" class="dark-form-submit-btn">
+                    </div>
+                </form>
+                <div class="login-register-link">
+                    <a href="register">Don't have an account? Register here</a>
+                </div>
+            </div>
+        </div>
+    </body>    
+</html>
