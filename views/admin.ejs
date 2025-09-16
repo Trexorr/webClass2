@@ -6,8 +6,8 @@
         <div class="dark-navbar-container">
             <%- include('partials/navbar2.ejs') %>
             <div class="dark-title-section">
-                <h1 class="dark-hero-title">PARLIAMENT</h1>
-                <h2 class="dark-hero-subtitle">MEMBERS OF PARLIAMENT</h2>
+                <h1 class="dark-hero-title">ADMIN</h1>
+                <h2 class="dark-hero-subtitle">MENU</h2>
             </div>
         </div>
         <div class="container hero">
@@ -17,23 +17,27 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Party</th>
+                                <th>Username</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <% if (MPsData.length !=0) {var i=1; MPsData.forEach( function(data) { %>
+                            <% if (usersData.length !=0) {var i=1; usersData.forEach( function(data) { %>
                             <tr class="listmps-row">
                                 <td><%=data.id %></td>
                                 <td class="name-cell"><%=data.name %></td>
-                                <td class="party-cell"><%=data.party %></td>
+                                <td>
+                                    <form action="/admin/delete" method="POST">
+                                        <input type="hidden" name="id" value="<%= data.id %>">
+                                        <button type="null" class="delete-btn">Delete</button>
+                                    </form>
+                                </td>
                             </tr>
                             <% i++; }) %> <%}%>
                         </tbody>
                     </table>
                 </div>
                 <div class="dark-content-container listmps-note-section">
-                    <p><strong>Note:</strong> Adding new Members of Parliament is limited to authorized users to keep the information accurate and secure.</p>
+                    <p><strong>Note:</strong> Only deleting the Users is possible from this screen.</p>
                 </div>
             </div>
         </div>

@@ -140,7 +140,7 @@ margin-left: 20px;
     margin-top: 20px;
 }
 
-.login-page .login-register-link a {
+.login-page .login-register-link a, p {
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
@@ -305,6 +305,27 @@ margin-left: 20px;
 .dark-theme .dark-form-submit-btn:hover {
     background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
     transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255,255,255,0.2);
+}
+
+.delete-btn {
+    width: 70%;
+    height: 40px;
+    padding: 5px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    translate: 0 7px;
+}
+.delete-btn:hover {
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
     box-shadow: 0 8px 25px rgba(255,255,255,0.2);
 }
 
@@ -583,4 +604,83 @@ margin-left: 20px;
 
 .listmps-page .listmps-note-section strong {
     color: #ffffff;
+}
+
+/* Products page specific styles (based on listmps styles but confined to products page) */
+.products-page {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #333333 100%);
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.products-page .container.hero {
+    /* allow content to grow and show scrollbar */
+    align-items: stretch;
+}
+
+.products-page .products-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.products-page .products-table-container {
+    margin-bottom: 30px;
+    overflow-x: auto;
+}
+
+.products-page .products-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+}
+
+.products-page .products-table thead tr {
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+.products-page .products-table th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.products-page .products-row {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.products-page .products-row:hover {
+    background-color: rgba(255,255,255,0.05);
+}
+
+.products-page .products-table td {
+    padding: 15px;
+    color: #cccccc;
+    font-size: 1rem;
+}
+
+.products-page .name-cell {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.products-page .party-cell {
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+.products-page .add-product-container {
+    position: relative;
+}
+
+.products-page .add-product-form {
+    position: sticky;
+    top: 24px;
 }

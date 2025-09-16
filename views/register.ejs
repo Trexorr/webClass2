@@ -8,8 +8,8 @@
         </div>
         <div class="container hero">
             <div class="dark-content-container login-form">
-                <h1 class="dark-form-title">Login</h1>
-                <form action="/auth" method="post" class="dark-form-container">
+                <h1 class="dark-form-title">REGISTER</h1>
+                <form action="/register" method="post" class="dark-form-container">
                     <div class="dark-form-group">
                         <input type="text" name="username" placeholder="Username" id="username" required class="dark-form-input">
                     </div>
@@ -21,16 +21,11 @@
                     </div>
                 </form>
                 <div class="login-register-link">
-                    <p>Don't have an account? <a href="/register">Click here</a></p>
+                    <p>Already have an account? <a href="/login">Login Here</a></p>
                 </div>
                 <% if (typeof error !== 'undefined' && error) { %>
-                <div style="color:#ff6b6b; margin-top:8px; font-size:14px;">
+                <div style="color: #ff6b6b; margin-top:8px; font-size:14px;">
                     <%= error %>
-                </div>
-                <% } %>
-                <% if (typeof success !== 'undefined' && success) { %>
-                <div style="color:#07d047; margin-top:8px; font-size:14px;">
-                    <%= success %>
                 </div>
                 <% } %>
             </div>

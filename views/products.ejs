@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <%- include('partials/header1.ejs') %>
+</head>
+
+<body class="products-page dark-theme">
+    <div class="dark-navbar-container">
+        <%- include('partials/navbar2.ejs') %>
+            <div class="dark-title-section">
+                <h1 class="dark-hero-title">Products</h1>
+                <h2 class="dark-hero-subtitle">Page</h2>
+            </div>
+    </div>
+    <div class="container hero">
+        <div class="products-content-wrapper">
+            <div class="dark-content-container products-table-container">
+                <table class="products-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (products.length !=0) {var i=1; products.forEach( function(data) { %>
+                            <tr class="products-row">
+                                <td>
+                                    <%=data.id %>
+                                </td>
+                                <td class="name-cell">
+                                    <%=data.name %>
+                                </td>
+                                <td>$<%=data.pricing %>
+                                </td>
+                                <td class="name-cell">
+                                    <%=data.rating %>
+                                </td>
+                                <td>
+                                    <form action="/products/rating" method="POST">
+                                        <button type="submit" name="productRating" value="1">1</button>
+                                        <button type="submit" name="productRating" value="2">2</button>
+                                        <button type="submit" name="productRating" value="3">3</button>
+                                        <button type="submit" name="productRating" value="4">4</button>
+                                        <button type="submit" name="productRating" value="5">5</button>
+                                        <input type="hidden" name="productId" value="<%= data.id %>" >
+                                    </form>
+                                </td>
+                            </tr>
+                            <% i++; }) %>
+                                <%}%>
+                    </tbody>
+                </table>
+            </div>
+            <div class="dark-content-container add-product-container">
+                <div class="add-product-form">
+                <h1 class="dark-form-title">Add a new Product</h1>
+                <form action="/products/newProduct" method="POST" class="dark-form-container">
+                    <div class="dark-form-group">
+                        <label for="productName" class="dark-form-label">Product Name</label>
+                        <input type="text" id="productName" placeholder="example: Hats" name="productName" required class="dark-form-input">
+                    </div>
+                    <div class="dark-form-group">
+                        <label for="productPrice" class="dark-form-label">Product Price</label>
+                        <input type="number" min="0" step="0.01" id="productPrice" placeholder="Enter a price" name="productPrice" required class="dark-form-input">
+                    </div>
+                    <div class="dark-form-submit-section">
+                        <button type="submit" class="dark-form-submit-btn">
+                            Submit new Product
+                        </button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

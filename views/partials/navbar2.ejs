@@ -17,6 +17,19 @@
                 <a class="nav-link" href="/addMPs">Add an MP</a>
             </li>
             <li class="nav-item">
+                <% 
+                    const current = (typeof activePage !== 'undefined') 
+                        ? activePage 
+                        : (typeof req !== 'undefined' && (req.path || req.originalUrl) ? (req.path || req.originalUrl) : '');
+                    const isLogin = current === 'login' || current === '/login';
+                %>
+                <% if (isLogin) { %>
+                    <a class="nav-link" style="display:none" href="/admin">Admin Area</a>
+                <% } else { %>
+                    <a class="nav-link" href="/admin">Admin Area</a>
+                <% } %>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/logout">Logout</a>
             </li>
         </ul>
